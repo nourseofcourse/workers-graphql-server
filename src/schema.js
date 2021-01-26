@@ -20,7 +20,23 @@ module.exports = gql`
     sprites: PokemonSprites!
   }
 
+  type Program {
+    id: ID!
+    name: String!
+    category: Category
+  }
+
+  type Category {
+    id: ID!
+    name: String!
+  }
+
   type Query {
     pokemon(id: ID!): Pokemon
+    program(id: ID!): Program
+    programs: [Program]
+    category(id: ID!): Category
+    categories: [Category]
   }
+  
 `
